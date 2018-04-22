@@ -1,0 +1,21 @@
+{
+  "name": "appolo-client-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-boost": "^0.1.4",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.1"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
+}
