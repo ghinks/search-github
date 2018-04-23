@@ -1,7 +1,6 @@
 const chalk = require('chalk')
 const {ApolloClient} = require('apollo-client-preset')
 const {createHttpLink} = require('apollo-link-http')
-const { setContext } = require('apollo-link-context')
 const {InMemoryCache} = require('apollo-cache-inmemory')
 const gql = require('graphql-tag')
 const fetch = require('isomorphic-fetch')
@@ -13,20 +12,14 @@ console.log(Array(50).join('-'))
 console.log(chalk.blue('try apollo'))
 console.log(Array(50).join('-'))
 
-const link = createHttpLink({ uri: url, fetch })
+const headers = {
+  authorization: `Bearer ${githubToken}`
+}
 
-const authLink = setContext((_, { headers }) => {
-  return {
-    headers: {
-      ...headers,
-      authorization: `Bearer ${githubToken}`
-    }
-  }
-});
-
+const link = createHttpLink({ uri: url, fetch, headers })
 
 const client = new ApolloClient({
-  link: authLink.concat(link),
+  link,
   cache: new InMemoryCache()
 })
 

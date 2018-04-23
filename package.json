@@ -1,6 +1,6 @@
 {
-  "name": "appolo-client-testing",
-  "version": "1.0.0",
+  "name": "search-github",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,8 +8,9 @@
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": "https://github.com/ghinks/search-github.git",
+  "author": "Glenn Hinks",
+  "license": "GNU",
   "dependencies": {
     "apollo-client-preset": "^1.0.8",
     "apollo-link-context": "^1.0.8",
