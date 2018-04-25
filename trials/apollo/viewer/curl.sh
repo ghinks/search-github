@@ -3,4 +3,4 @@ curl -H "Authorization: bearer 57cac615ac72ce8487999babb98322befb29a1e5" -X POST
 { \
     \"query\": \"query { viewer { login }}\" \
 } \
-" https://api.github.com/graphql
+" https://api.github.com/graphql | jq
