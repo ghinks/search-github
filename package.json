@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "build": "babel src --out-dir lib --ignore test.js",
+    "watch": "babel --watch src --out-dir lib --ignore test.js",
+    "lint": "standard --env jest src/**/*.js",
+    "test": "jest --coverage"
   },
   "keywords": [],
   "repository": "https://github.com/ghinks/search-github.git",
@@ -21,6 +23,59 @@
   },
   "devDependencies": {
     "chalk": "^2.4.0",
-    "standard": "^11.0.1"
+    "standard": "^11.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.3",
+    "babel-plugin-rewire": "^1.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chai": "^4.1.2",
+    "jest": "^22.4.3",
+    "nock": "^9.2.1",
+    "nodemon": "^1.15.1",
+    "nyc": "^11.4.1",
+    "regenerator-runtime": "^0.11.1"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "env": {
+      "jest": true
+    }
+  },
+  "jest": {
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "html"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "6.0.0"
+          }
+        }
+      ],
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-runtime"
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "babel-plugin-rewire",
+          "transform-runtime"
+        ]
+      }
+    }
   }
 }
