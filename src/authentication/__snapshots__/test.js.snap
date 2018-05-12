@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`authentication get config token 1`] = `"abc"`;
+
+exports[`authentication get github token 1`] = `"abc"`;
