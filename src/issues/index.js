@@ -1,6 +1,6 @@
 import constants from '../constants'
 import { GraphQLClient } from 'graphql-request'
-import { getEnvToken } from '../authentication'
+import getToken from '../authentication'
 
 const createQuery = (owner, name, cursor) => {
   console.log(constants)
@@ -43,7 +43,7 @@ const request = async (token, query) => {
 }
 
 const getIssues = async (owner, name, cursor) => {
-  const token = getEnvToken()
+  const token = getToken()
   const query = createQuery(owner, name, cursor)
   const result = await request(token, query)
   return result
