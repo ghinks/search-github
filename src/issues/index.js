@@ -3,13 +3,12 @@ import { GraphQLClient } from 'graphql-request'
 import getToken from '../authentication'
 
 const createQuery = (owner, name, cursor) => {
-  console.log(constants)
   const after = cursor ? `, after: ${cursor}` : ''
   const issueQuery = `
   query {
     repository(owner: "${owner}", name: "${name}") {
       id,
-      issues(first: ${constants.pageSz}, states: [OPEN] ${after}) {
+      issues(first: ${constants.pageSz}, states: [OPEN] , orderBy: { field: CREATED_AT, direction: DESC } ${after}) {
         totalCount,
         nodes {
           author {
@@ -38,7 +37,8 @@ const request = async (token, query) => {
   })
   const result = await client.request(query)
   console.log(Array(100).join('-'))
-  console.log(result)
+  console.log(JSON.stringify(result, null, 2))
+  console.log(Array(100).join('-'))
   return result
 }
 
