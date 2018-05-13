@@ -29,6 +29,13 @@ I want to be able to search for issues in a github repo and bring back all the i
 - useful cli
 - caching
 
+## Current work list
+- command line args for query
+- use as a module in another program
+- recursively get all the open issues
+- search closed issues too
+
+
 ## References
 
 - [github developer v4](https://developer.github.com/v4/)

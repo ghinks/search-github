@@ -1,5 +1,5 @@
 import { getIssues } from './issues'
 
-const search = () => getIssues('expressjs', 'express', undefined)
+const search = (owner, name, searchTerms) => getIssues(owner, name, searchTerms)
 
 export default search

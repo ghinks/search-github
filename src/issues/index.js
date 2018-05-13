@@ -35,18 +35,13 @@ const request = async (token, query) => {
       Authorization: `Bearer ${token}`
     }
   })
-  const result = await client.request(query)
-  console.log(Array(100).join('-'))
-  console.log(JSON.stringify(result, null, 2))
-  console.log(Array(100).join('-'))
-  return result
+  return client.request(query)
 }
 
-const getIssues = async (owner, name, cursor) => {
+const getIssues = async (owner, name, searchTerms, cursor) => {
   const token = getToken()
   const query = createQuery(owner, name, cursor)
-  const result = await request(token, query)
-  return result
+  return request(token, query)
 }
 
-export { getIssues, createQuery }
+export { getIssues, createQuery, request }

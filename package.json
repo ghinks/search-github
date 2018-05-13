@@ -21,6 +21,7 @@
     "graphql-tag": "^2.9.1",
     "isomorphic-fetch": "^2.2.1",
     "lodash.get": "^4.4.2",
+    "minimist": "^1.2.0",
     "parse-git-config": "^2.0.2"
   },
   "devDependencies": {
