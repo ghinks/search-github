@@ -18,7 +18,7 @@ describe('issue queries', () => {
     })
   })
   describe('Request', () => {
-    let response;
+    let response
     beforeEach((done) => {
       fsp.readFile(`${__dirname}/test.data.json`, 'utf8')
         .then((testData) => {
@@ -39,7 +39,7 @@ describe('issue queries', () => {
     })
   })
   describe('Issues', () => {
-    let response;
+    let response
     beforeEach((done) => {
       fsp.readFile(`${__dirname}/test.data.json`, 'utf8')
         .then((testData) => {
