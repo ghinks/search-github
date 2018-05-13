@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`issue queries passing A subsequential request should fetch data 1`] = `undefined`;
+
+exports[`issue queries passing An initial request should fetch data 1`] = `undefined`;

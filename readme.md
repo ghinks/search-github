@@ -16,6 +16,12 @@ Initial the local environment variable GITHUB_TOKEN must be exported to provide 
 export GITHUB_TOKEN = 'smp12mupibtrxrmozlmvxbyrvb4iwszmzjnwkaee'
 ```
 
+or
+
+```
+git config --global github-search.token 'smp12mupibtrxrmozlmvxbyrvb4iwszmzjnwkaee'
+```
+
 ## Motivation
 I want to be able to search for issues in a github repo and bring back all the issues on the command line and filter them in the console without going to the search tool in the  browser.
 
@@ -28,3 +34,4 @@ I want to be able to search for issues in a github repo and bring back all the i
 - [github developer v4](https://developer.github.com/v4/)
 - [graphql ref impl](https://github.com/graphql/graphql-js)
 - [explorer](https://developer.github.com/v4/explorer/)
+- [learn](http://graphql.org/learn/)

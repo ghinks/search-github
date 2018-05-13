@@ -3,3 +3,7 @@
 exports[`authentication Passing get config token 1`] = `"abc"`;
 
 exports[`authentication Passing get github token 1`] = `"abc"`;
+
+exports[`authentication only config token get config token only 1`] = `"abc"`;
+
+exports[`authentication only env token get env github token 1`] = `"abc"`;

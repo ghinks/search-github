@@ -5,7 +5,6 @@ import get from 'lodash.get'
 const getEnvToken = () => process.env.GITHUB_TOKEN
 
 const getConfigToken = () => {
-  console.log(parse)
   const config = parse.sync({
     path: `${os.homedir()}/.gitconfig`
   })
@@ -15,4 +14,8 @@ const getConfigToken = () => {
   return undefined
 }
 
-export { getConfigToken, getEnvToken }
+const getToken = () => {
+  return getEnvToken() || getConfigToken()
+}
+
+export { getToken as default, getConfigToken, getEnvToken }

@@ -24,8 +24,6 @@
     "parse-git-config": "^2.0.2"
   },
   "devDependencies": {
-    "chalk": "^2.4.0",
-    "standard": "^11.0.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-jest": "^22.4.3",
@@ -35,11 +33,13 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
     "chai": "^4.1.2",
+    "chalk": "^2.4.0",
     "jest": "^22.4.3",
-    "nock": "^9.2.1",
+    "nock": "^9.2.5",
     "nodemon": "^1.15.1",
     "nyc": "^11.4.1",
-    "regenerator-runtime": "^0.11.1"
+    "regenerator-runtime": "^0.11.1",
+    "standard": "^11.0.0"
   },
   "standard": {
     "parser": "babel-eslint",

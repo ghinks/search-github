@@ -1,17 +1,8 @@
-import { getEnvToken, getConfigToken, __RewireAPI__ as authRewire } from './index'
+import getToken, { getEnvToken, getConfigToken, __RewireAPI__ as authRewire } from './index'
 
 describe('authentication', () => {
   describe('Passing', () => {
     const gitconfig = {
-      'user': {
-        'name': 'glenn vincent hinks',
-        'email': 'ghinks@yahoo.com'
-      },
-      'core': {
-        'excludesfile': '/Users/developer/.gitignore_global',
-        'autocrlf': 'input'
-      },
-
       'github-search': {
         'token': 'abc'
       }
@@ -37,16 +28,7 @@ describe('authentication', () => {
   })
 
   describe('failing', () => {
-    const gitconfig = {
-      'user': {
-        'name': 'glenn vincent hinks',
-        'email': 'ghinks@yahoo.com'
-      },
-      'core': {
-        'excludesfile': '/Users/developer/.gitignore_global',
-        'autocrlf': 'input'
-      }
-    }
+    const gitconfig = {}
     let envToken
     beforeAll(() => {
       envToken = process.env.GITHUB_TOKEN
@@ -63,6 +45,40 @@ describe('authentication', () => {
     })
     test('get no config token', () => {
       expect(getConfigToken()).toBeUndefined()
+    })
+  })
+
+  describe('only config token', () => {
+    const gitconfig = {
+      'github-search': {
+        'token': 'abc'
+      }
+    }
+    beforeAll(() => {
+      authRewire.__Rewire__('getEnvToken', () => undefined)
+      authRewire.__Rewire__('parse', { sync: () => gitconfig })
+    })
+    afterAll(() => {
+      authRewire.__ResetDependency__('getEnvToken')
+      authRewire.__ResetDependency__('parse')
+    })
+    test('get config token only', () => {
+      expect(getToken()).toMatchSnapshot()
+    })
+  })
+
+  describe('only env token', () => {
+    let envToken
+    beforeAll(() => {
+      envToken = process.env.GITHUB_TOKEN
+      process.env.GITHUB_TOKEN = 'abc'
+      jest.resetModules()
+    })
+    afterAll(() => {
+      process.env.GITHUB_TOKEN = envToken
+    })
+    test('get env github token', () => {
+      expect(getToken()).toMatchSnapshot()
     })
   })
 })
