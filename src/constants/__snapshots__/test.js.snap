@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`constants get the constants 1`] = `
+Object {
+  "pageSz": 10,
+  "url": "https://api.github.com/graphql",
+}
+`;

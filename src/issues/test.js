@@ -1,7 +1,21 @@
-import { getIssues } from './index'
+import { getIssues, createQuery } from './index'
 import nock from 'nock'
 
 describe('issue queries', () => {
+  describe('query creation', () => {
+    it('should return an initial query', () => {
+      const owner = 'expressjs'
+      const name = 'express'
+      const cursor = undefined
+      expect(createQuery(owner, name, cursor)).toMatchSnapshot()
+    })
+    it('should return a subsequent query', () => {
+      const owner = 'expressjs'
+      const name = 'express'
+      const cursor = 'Y3Vyc29yOnYyOpHOAkR9fQ=='
+      expect(createQuery(owner, name, cursor)).toMatchSnapshot()
+    })
+  })
   describe('passing', () => {
     beforeAll(() => {
 

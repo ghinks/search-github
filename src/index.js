@@ -1,3 +1,5 @@
-const hello = () => 'hello'
+import { getIssues } from './issues'
 
-export default hello
+const search = () => getIssues('expressjs', 'express', undefined)
+
+export default search

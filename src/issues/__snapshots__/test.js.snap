@@ -3,3 +3,53 @@
 exports[`issue queries passing A subsequential request should fetch data 1`] = `undefined`;
 
 exports[`issue queries passing An initial request should fetch data 1`] = `undefined`;
+
+exports[`issue queries query creation should return a subsequent query 1`] = `
+"
+  query {
+    repository(owner: \\"expressjs\\", name: \\"express\\") {
+      id,
+      issues(first: 10, states: [OPEN] , after: Y3Vyc29yOnYyOpHOAkR9fQ==) {
+        totalCount,
+        nodes {
+          author {
+            login
+          }
+          publishedAt,
+          id,
+          body,
+          number,
+        }
+        pageInfo {
+          endCursor,
+          hasNextPage
+        }
+      }
+    }
+  }"
+`;
+
+exports[`issue queries query creation should return an initial query 1`] = `
+"
+  query {
+    repository(owner: \\"expressjs\\", name: \\"express\\") {
+      id,
+      issues(first: 10, states: [OPEN] ) {
+        totalCount,
+        nodes {
+          author {
+            login
+          }
+          publishedAt,
+          id,
+          body,
+          number,
+        }
+        pageInfo {
+          endCursor,
+          hasNextPage
+        }
+      }
+    }
+  }"
+`;
