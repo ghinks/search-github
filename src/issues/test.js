@@ -25,7 +25,7 @@ describe('issue queries', () => {
           response = JSON.parse(testData)
           nock(/.*/)
             .post(/.*/)
-            .reply(200, response)
+            .reply(200, {data: response})
           done()
         })
     })
@@ -39,24 +39,54 @@ describe('issue queries', () => {
     })
   })
   describe('Issues', () => {
-    let response
-    beforeEach((done) => {
-      fsp.readFile(`${__dirname}/test.data.json`, 'utf8')
-        .then((testData) => {
-          response = JSON.parse(testData)
-          issuesRewire.__Rewire__('request', () => Promise.resolve(response))
-          issuesRewire.__Rewire__('getToken', () => 'token')
-          done()
-        })
+    describe('multiple pages', () => {
+      let response
+      beforeEach((done) => {
+        let count = 0
+        fsp.readFile(`${__dirname}/test.data.json`, 'utf8')
+          .then((testData) => {
+            response = JSON.parse(testData)
+            issuesRewire.__Rewire__('request', () => {
+              count++
+              if (count > 2) {
+                response.repository.issues.pageInfo.hasNextPage = false
+              }
+              return Promise.resolve(response)
+            })
+            issuesRewire.__Rewire__('getToken', () => 'token')
+            done()
+          })
+      })
+      afterEach(() => {
+        issuesRewire.__ResetDependency__('request')
+        issuesRewire.__ResetDependency__('getToken')
+      })
+      test('Expect a list of issues', async () => {
+        expect.assertions(1)
+        const result = await getIssues('expressjs', 'express', 'undefined')
+        expect(result).toMatchSnapshot()
+      })
     })
-    afterEach(() => {
-      issuesRewire.__ResetDependency__('request')
-      issuesRewire.__ResetDependency__('getToken')
-    })
-    test('Expect a list of issues', async () => {
-      expect.assertions(1)
-      const result = await getIssues('expressjs', 'express', 'undefined')
-      expect(result).toMatchSnapshot()
+    describe('single page', () => {
+      beforeEach((done) => {
+        fsp.readFile(`${__dirname}/test.data.json`, 'utf8')
+          .then((testData) => {
+            const response = JSON.parse(testData)
+            response.repository.issues.pageInfo.hasNextPage = false
+            issuesRewire.__Rewire__('request', () => Promise.resolve(response))
+            issuesRewire.__Rewire__('getToken', () => 'token')
+            done()
+          })
+      })
+      afterEach(() => {
+        issuesRewire.__ResetDependency__('request')
+        issuesRewire.__ResetDependency__('getToken')
+      })
+      test('Expect a list of issues', async () => {
+        expect.assertions(1)
+        const result = await getIssues('expressjs', 'express', 'undefined')
+        expect(result).toMatchSnapshot()
+      })
     })
   })
 })

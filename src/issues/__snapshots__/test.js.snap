@@ -1,101 +1,413 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`issue queries Issues Expect a list of issues 1`] = `
-Object {
-  "data": Object {
-    "repository": Object {
-      "issues": Object {
-        "nodes": Array [
-          Object {
-            "author": Object {
-              "login": "keyiis",
-            },
-            "id": "MDU6SXNzdWUzMjEwMjgzNjg=",
-            "number": 3647,
-            "publishedAt": "2018-05-08T03:17:07Z",
-          },
-          Object {
-            "author": Object {
-              "login": "anuradhag",
-            },
-            "id": "MDU6SXNzdWUzMjA3MDIzMTE=",
-            "number": 3646,
-            "publishedAt": "2018-05-07T07:31:24Z",
-          },
-          Object {
-            "author": Object {
-              "login": "Jtaks",
-            },
-            "id": "MDU6SXNzdWUzMTY0Mjg1OTY=",
-            "number": 3630,
-            "publishedAt": "2018-04-20T22:24:50Z",
-          },
-          Object {
-            "author": Object {
-              "login": "teddy-owen",
-            },
-            "id": "MDU6SXNzdWUzMDY3MTcxODc=",
-            "number": 3597,
-            "publishedAt": "2018-03-20T03:33:48Z",
-          },
-          Object {
-            "author": Object {
-              "login": "kibertoad",
-            },
-            "id": "MDU6SXNzdWUyOTYyMzY3NzA=",
-            "number": 3560,
-            "publishedAt": "2018-02-11T23:21:32Z",
-          },
-          Object {
-            "author": Object {
-              "login": "WORMSS",
-            },
-            "id": "MDU6SXNzdWUyOTUyMTg4OTg=",
-            "number": 3555,
-            "publishedAt": "2018-02-07T17:09:37Z",
-          },
-          Object {
-            "author": Object {
-              "login": "do-web",
-            },
-            "id": "MDU6SXNzdWUyOTQ3MjEyNzM=",
-            "number": 3553,
-            "publishedAt": "2018-02-06T11:15:12Z",
-          },
-          Object {
-            "author": Object {
-              "login": "Ferrus91",
-            },
-            "id": "MDU6SXNzdWUyOTM4MjEyNDg=",
-            "number": 3550,
-            "publishedAt": "2018-02-02T09:17:17Z",
-          },
-          Object {
-            "author": Object {
-              "login": "bradvogel",
-            },
-            "id": "MDU6SXNzdWUyODg3MzIzNjc=",
-            "number": 3536,
-            "publishedAt": "2018-01-15T22:27:55Z",
-          },
-          Object {
-            "author": Object {
-              "login": "Drulac",
-            },
-            "id": "MDU6SXNzdWUyODY1NzcwODc=",
-            "number": 3527,
-            "publishedAt": "2018-01-07T15:30:38Z",
-          },
-        ],
-        "pageInfo": Object {
-          "endCursor": "Y3Vyc29yOnYyOpK5MjAxOC0wMS0wN1QxMDozMDozOC0wNTowMM4RFNG/",
-          "hasNextPage": true,
-        },
-        "totalCount": 118,
-      },
+exports[`issue queries Issues multiple pages Expect a list of issues 1`] = `
+Array [
+  Object {
+    "author": Object {
+      "login": "keyiis",
     },
+    "id": "MDU6SXNzdWUzMjEwMjgzNjg=",
+    "number": 3647,
+    "publishedAt": "2018-05-08T03:17:07Z",
   },
-}
+  Object {
+    "author": Object {
+      "login": "anuradhag",
+    },
+    "id": "MDU6SXNzdWUzMjA3MDIzMTE=",
+    "number": 3646,
+    "publishedAt": "2018-05-07T07:31:24Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Jtaks",
+    },
+    "id": "MDU6SXNzdWUzMTY0Mjg1OTY=",
+    "number": 3630,
+    "publishedAt": "2018-04-20T22:24:50Z",
+  },
+  Object {
+    "author": Object {
+      "login": "teddy-owen",
+    },
+    "id": "MDU6SXNzdWUzMDY3MTcxODc=",
+    "number": 3597,
+    "publishedAt": "2018-03-20T03:33:48Z",
+  },
+  Object {
+    "author": Object {
+      "login": "kibertoad",
+    },
+    "id": "MDU6SXNzdWUyOTYyMzY3NzA=",
+    "number": 3560,
+    "publishedAt": "2018-02-11T23:21:32Z",
+  },
+  Object {
+    "author": Object {
+      "login": "WORMSS",
+    },
+    "id": "MDU6SXNzdWUyOTUyMTg4OTg=",
+    "number": 3555,
+    "publishedAt": "2018-02-07T17:09:37Z",
+  },
+  Object {
+    "author": Object {
+      "login": "do-web",
+    },
+    "id": "MDU6SXNzdWUyOTQ3MjEyNzM=",
+    "number": 3553,
+    "publishedAt": "2018-02-06T11:15:12Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Ferrus91",
+    },
+    "id": "MDU6SXNzdWUyOTM4MjEyNDg=",
+    "number": 3550,
+    "publishedAt": "2018-02-02T09:17:17Z",
+  },
+  Object {
+    "author": Object {
+      "login": "bradvogel",
+    },
+    "id": "MDU6SXNzdWUyODg3MzIzNjc=",
+    "number": 3536,
+    "publishedAt": "2018-01-15T22:27:55Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Drulac",
+    },
+    "id": "MDU6SXNzdWUyODY1NzcwODc=",
+    "number": 3527,
+    "publishedAt": "2018-01-07T15:30:38Z",
+  },
+  Object {
+    "author": Object {
+      "login": "keyiis",
+    },
+    "id": "MDU6SXNzdWUzMjEwMjgzNjg=",
+    "number": 3647,
+    "publishedAt": "2018-05-08T03:17:07Z",
+  },
+  Object {
+    "author": Object {
+      "login": "anuradhag",
+    },
+    "id": "MDU6SXNzdWUzMjA3MDIzMTE=",
+    "number": 3646,
+    "publishedAt": "2018-05-07T07:31:24Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Jtaks",
+    },
+    "id": "MDU6SXNzdWUzMTY0Mjg1OTY=",
+    "number": 3630,
+    "publishedAt": "2018-04-20T22:24:50Z",
+  },
+  Object {
+    "author": Object {
+      "login": "teddy-owen",
+    },
+    "id": "MDU6SXNzdWUzMDY3MTcxODc=",
+    "number": 3597,
+    "publishedAt": "2018-03-20T03:33:48Z",
+  },
+  Object {
+    "author": Object {
+      "login": "kibertoad",
+    },
+    "id": "MDU6SXNzdWUyOTYyMzY3NzA=",
+    "number": 3560,
+    "publishedAt": "2018-02-11T23:21:32Z",
+  },
+  Object {
+    "author": Object {
+      "login": "WORMSS",
+    },
+    "id": "MDU6SXNzdWUyOTUyMTg4OTg=",
+    "number": 3555,
+    "publishedAt": "2018-02-07T17:09:37Z",
+  },
+  Object {
+    "author": Object {
+      "login": "do-web",
+    },
+    "id": "MDU6SXNzdWUyOTQ3MjEyNzM=",
+    "number": 3553,
+    "publishedAt": "2018-02-06T11:15:12Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Ferrus91",
+    },
+    "id": "MDU6SXNzdWUyOTM4MjEyNDg=",
+    "number": 3550,
+    "publishedAt": "2018-02-02T09:17:17Z",
+  },
+  Object {
+    "author": Object {
+      "login": "bradvogel",
+    },
+    "id": "MDU6SXNzdWUyODg3MzIzNjc=",
+    "number": 3536,
+    "publishedAt": "2018-01-15T22:27:55Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Drulac",
+    },
+    "id": "MDU6SXNzdWUyODY1NzcwODc=",
+    "number": 3527,
+    "publishedAt": "2018-01-07T15:30:38Z",
+  },
+  Object {
+    "author": Object {
+      "login": "keyiis",
+    },
+    "id": "MDU6SXNzdWUzMjEwMjgzNjg=",
+    "number": 3647,
+    "publishedAt": "2018-05-08T03:17:07Z",
+  },
+  Object {
+    "author": Object {
+      "login": "anuradhag",
+    },
+    "id": "MDU6SXNzdWUzMjA3MDIzMTE=",
+    "number": 3646,
+    "publishedAt": "2018-05-07T07:31:24Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Jtaks",
+    },
+    "id": "MDU6SXNzdWUzMTY0Mjg1OTY=",
+    "number": 3630,
+    "publishedAt": "2018-04-20T22:24:50Z",
+  },
+  Object {
+    "author": Object {
+      "login": "teddy-owen",
+    },
+    "id": "MDU6SXNzdWUzMDY3MTcxODc=",
+    "number": 3597,
+    "publishedAt": "2018-03-20T03:33:48Z",
+  },
+  Object {
+    "author": Object {
+      "login": "kibertoad",
+    },
+    "id": "MDU6SXNzdWUyOTYyMzY3NzA=",
+    "number": 3560,
+    "publishedAt": "2018-02-11T23:21:32Z",
+  },
+  Object {
+    "author": Object {
+      "login": "WORMSS",
+    },
+    "id": "MDU6SXNzdWUyOTUyMTg4OTg=",
+    "number": 3555,
+    "publishedAt": "2018-02-07T17:09:37Z",
+  },
+  Object {
+    "author": Object {
+      "login": "do-web",
+    },
+    "id": "MDU6SXNzdWUyOTQ3MjEyNzM=",
+    "number": 3553,
+    "publishedAt": "2018-02-06T11:15:12Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Ferrus91",
+    },
+    "id": "MDU6SXNzdWUyOTM4MjEyNDg=",
+    "number": 3550,
+    "publishedAt": "2018-02-02T09:17:17Z",
+  },
+  Object {
+    "author": Object {
+      "login": "bradvogel",
+    },
+    "id": "MDU6SXNzdWUyODg3MzIzNjc=",
+    "number": 3536,
+    "publishedAt": "2018-01-15T22:27:55Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Drulac",
+    },
+    "id": "MDU6SXNzdWUyODY1NzcwODc=",
+    "number": 3527,
+    "publishedAt": "2018-01-07T15:30:38Z",
+  },
+  Object {
+    "author": Object {
+      "login": "keyiis",
+    },
+    "id": "MDU6SXNzdWUzMjEwMjgzNjg=",
+    "number": 3647,
+    "publishedAt": "2018-05-08T03:17:07Z",
+  },
+  Object {
+    "author": Object {
+      "login": "anuradhag",
+    },
+    "id": "MDU6SXNzdWUzMjA3MDIzMTE=",
+    "number": 3646,
+    "publishedAt": "2018-05-07T07:31:24Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Jtaks",
+    },
+    "id": "MDU6SXNzdWUzMTY0Mjg1OTY=",
+    "number": 3630,
+    "publishedAt": "2018-04-20T22:24:50Z",
+  },
+  Object {
+    "author": Object {
+      "login": "teddy-owen",
+    },
+    "id": "MDU6SXNzdWUzMDY3MTcxODc=",
+    "number": 3597,
+    "publishedAt": "2018-03-20T03:33:48Z",
+  },
+  Object {
+    "author": Object {
+      "login": "kibertoad",
+    },
+    "id": "MDU6SXNzdWUyOTYyMzY3NzA=",
+    "number": 3560,
+    "publishedAt": "2018-02-11T23:21:32Z",
+  },
+  Object {
+    "author": Object {
+      "login": "WORMSS",
+    },
+    "id": "MDU6SXNzdWUyOTUyMTg4OTg=",
+    "number": 3555,
+    "publishedAt": "2018-02-07T17:09:37Z",
+  },
+  Object {
+    "author": Object {
+      "login": "do-web",
+    },
+    "id": "MDU6SXNzdWUyOTQ3MjEyNzM=",
+    "number": 3553,
+    "publishedAt": "2018-02-06T11:15:12Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Ferrus91",
+    },
+    "id": "MDU6SXNzdWUyOTM4MjEyNDg=",
+    "number": 3550,
+    "publishedAt": "2018-02-02T09:17:17Z",
+  },
+  Object {
+    "author": Object {
+      "login": "bradvogel",
+    },
+    "id": "MDU6SXNzdWUyODg3MzIzNjc=",
+    "number": 3536,
+    "publishedAt": "2018-01-15T22:27:55Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Drulac",
+    },
+    "id": "MDU6SXNzdWUyODY1NzcwODc=",
+    "number": 3527,
+    "publishedAt": "2018-01-07T15:30:38Z",
+  },
+]
+`;
+
+exports[`issue queries Issues single page Expect a list of issues 1`] = `
+Array [
+  Object {
+    "author": Object {
+      "login": "keyiis",
+    },
+    "id": "MDU6SXNzdWUzMjEwMjgzNjg=",
+    "number": 3647,
+    "publishedAt": "2018-05-08T03:17:07Z",
+  },
+  Object {
+    "author": Object {
+      "login": "anuradhag",
+    },
+    "id": "MDU6SXNzdWUzMjA3MDIzMTE=",
+    "number": 3646,
+    "publishedAt": "2018-05-07T07:31:24Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Jtaks",
+    },
+    "id": "MDU6SXNzdWUzMTY0Mjg1OTY=",
+    "number": 3630,
+    "publishedAt": "2018-04-20T22:24:50Z",
+  },
+  Object {
+    "author": Object {
+      "login": "teddy-owen",
+    },
+    "id": "MDU6SXNzdWUzMDY3MTcxODc=",
+    "number": 3597,
+    "publishedAt": "2018-03-20T03:33:48Z",
+  },
+  Object {
+    "author": Object {
+      "login": "kibertoad",
+    },
+    "id": "MDU6SXNzdWUyOTYyMzY3NzA=",
+    "number": 3560,
+    "publishedAt": "2018-02-11T23:21:32Z",
+  },
+  Object {
+    "author": Object {
+      "login": "WORMSS",
+    },
+    "id": "MDU6SXNzdWUyOTUyMTg4OTg=",
+    "number": 3555,
+    "publishedAt": "2018-02-07T17:09:37Z",
+  },
+  Object {
+    "author": Object {
+      "login": "do-web",
+    },
+    "id": "MDU6SXNzdWUyOTQ3MjEyNzM=",
+    "number": 3553,
+    "publishedAt": "2018-02-06T11:15:12Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Ferrus91",
+    },
+    "id": "MDU6SXNzdWUyOTM4MjEyNDg=",
+    "number": 3550,
+    "publishedAt": "2018-02-02T09:17:17Z",
+  },
+  Object {
+    "author": Object {
+      "login": "bradvogel",
+    },
+    "id": "MDU6SXNzdWUyODg3MzIzNjc=",
+    "number": 3536,
+    "publishedAt": "2018-01-15T22:27:55Z",
+  },
+  Object {
+    "author": Object {
+      "login": "Drulac",
+    },
+    "id": "MDU6SXNzdWUyODY1NzcwODc=",
+    "number": 3527,
+    "publishedAt": "2018-01-07T15:30:38Z",
+  },
+]
 `;
 
 exports[`issue queries Request An initial request should fetch data 1`] = `
