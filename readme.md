@@ -33,6 +33,7 @@ I want to be able to search for issues in a github repo and bring back all the i
 - command line args for query
 - use as a module in another program
 - recursively get all the open issues
+- filter on search term
 - search closed issues too
 
 
