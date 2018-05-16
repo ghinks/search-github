@@ -38,14 +38,14 @@ const request = async (token, query) => {
   return client.request(query)
 }
 
-const subsequent = async (results, token, owner, name, searchTerms, cursor) => {
+const pagedRequest = async (results, token, owner, name, searchTerms, cursor) => {
   const query = createQuery(owner, name, cursor)
   let result = await request(token, query)
   console.log(result)
   result.repository.issues.nodes.forEach(n => results.push(n))
   console.log(results.length)
   if (result.repository.issues.pageInfo.hasNextPage) {
-    return subsequent(results, token, owner, name, searchTerms, result.repository.issues.pageInfo.endCursor)
+    return pagedRequest(results, token, owner, name, searchTerms, result.repository.issues.pageInfo.endCursor)
   }
   return results
 }
@@ -56,7 +56,7 @@ const getIssues = async (owner, name, searchTerms) => {
   let result = await request(token, query)
   let results = result.repository.issues.nodes
   if (result.repository.issues.pageInfo.hasNextPage) {
-    return subsequent(results, token, owner, name, searchTerms, result.repository.issues.pageInfo.endCursor)
+    return pagedRequest(results, token, owner, name, searchTerms, result.repository.issues.pageInfo.endCursor)
   }
   return results
 }
