@@ -20,7 +20,20 @@ describe('Search', () => {
   describe('failing cases', () => {
     test('given no nodes expect no nodes', () => {
       const searchTerm = '.*'
-      expect(filter([], searchTerm)).toEqual(expect.arrayContaining([]))
+      const value = filter([], searchTerm)
+      expect(value.length).toBe(0)
+    })
+
+    test('given no array expect no nodes', () => {
+      const searchTerm = '.*'
+      const value = filter(null, searchTerm)
+      expect(value.length).toEqual(expect.arrayContaining([]))
+    })
+
+    test('given nodes with no text expect no results', () => {
+      const searchTerm = '.*'
+      const value = filter([{}], searchTerm)
+      expect(value.length).toEqual(expect.arrayContaining([]))
     })
   })
 
@@ -31,11 +44,15 @@ describe('Search', () => {
     })
     test('expect to find only one match', () => {
       const searchTerm = '.*body1.*'
-      expect(filter(nodes, searchTerm)).toEqual(expect.arrayContaining([node1]))
+      const value = filter(nodes, searchTerm)
+      expect(value).toEqual(expect.arrayContaining([node1]))
+      expect(value.length).toBe(1)
     })
     test('expect to find two matches', () => {
       const searchTerm = '.*body[12].*'
-      expect(filter(nodes, searchTerm)).toEqual(expect.arrayContaining([node1, node2]))
+      const value = filter(nodes, searchTerm)
+      expect(value).toEqual(expect.arrayContaining([node1, node2]))
+      expect(value.length).toBe(2)
     })
   })
 
@@ -47,10 +64,14 @@ describe('Search', () => {
       expect(filter(nodes, [searchTerm1])).toEqual(expect.arrayContaining(nodes))
     })
     test('expect to find only one match', () => {
-      expect(filter(nodes, [searchTerm2])).toEqual(expect.arrayContaining([node2]))
+      const value = filter(nodes, [searchTerm2])
+      expect(value).toEqual(expect.arrayContaining([node2]))
+      expect(value.length).toBe(1)
     })
     test('expect to find two matches', () => {
-      expect(filter(nodes, [searchTerm2, searchTerm3])).toEqual(expect.arrayContaining([node2, node3]))
+      const value = filter(nodes, [searchTerm2, searchTerm3])
+      expect(value).toEqual(expect.arrayContaining([node2, node3]))
+      expect(value.length).toBe(2)
     })
   })
 })
