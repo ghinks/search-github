@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`format expect formated output 1`] = `
+"╔═════════╤═════════╤═════════════════════════════════════════╗
+║ Issue # │ when    │ Title                                   ║
+╟─────────┼─────────┼─────────────────────────────────────────╢
+║ 1234    │ 12 days │ Can't throw error in router middleware  ║
+╚═════════╧═════════╧═════════════════════════════════════════╝
+"
+`;

@@ -31,9 +31,9 @@ I want to be able to search for issues in a github repo and bring back all the i
 
 ## Current work list
 - command line args for query COMPLETED
-- use as a module in another program
 - recursively get all the open issues COMPLETED
 - filter on search term COMPLETED
+- use as a module in another program
 - search closed issues too
 - take url rather than owner and name
 - add days old / age to table o/p

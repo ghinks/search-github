@@ -1,15 +1,7 @@
 import { getIssues } from './issues'
 import filter from './search'
 import ora from 'ora'
-import { table } from 'table'
-import moment from 'moment'
-
-const output = (nodes) => {
-  let data = nodes.map(node => [node.number, moment.duration(moment.utc(node.publishedAt).diff(moment())).humanize(), node.title])
-  data = [['Issue #', 'when', 'Title'], ...data]
-  const output = table(data)
-  console.log(output)
-}
+import format from './format'
 
 const search = (owner, name, searchTerms) => {
   const spinner = ora('Scanning repo').start()
@@ -20,10 +12,10 @@ const search = (owner, name, searchTerms) => {
     })
     .then((matchingNodes) => {
       console.log(`num matches = ${matchingNodes.length}`)
-      output(matchingNodes)
+      console.log(`${format(matchingNodes)}`)
       spinner.stop()
     })
     .catch(err => console.log(err.message))
 }
 
-export default search
+export { search as default, getIssues, filter }
