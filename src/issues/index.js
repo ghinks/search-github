@@ -8,6 +8,7 @@ const createQuery = (owner, name, cursor) => {
   query {
     repository(owner: "${owner}", name: "${name}") {
       id,
+      url,
       issues(first: ${constants.pageSz}, states: [OPEN] , orderBy: { field: CREATED_AT, direction: DESC } ${after}) {
         totalCount,
         nodes {
@@ -53,6 +54,7 @@ const getIssues = async (owner, name, searchTerms) => {
   const token = getToken()
   const query = createQuery(owner, name)
   let result = await request(token, query)
+  console.log(result.repository.url)
   let results = result.repository.issues.nodes
   if (result.repository.issues.pageInfo.hasNextPage) {
     return pagedRequest(results, token, owner, name, searchTerms, result.repository.issues.pageInfo.endCursor)
