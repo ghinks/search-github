@@ -2,7 +2,7 @@ import format from './index'
 import fsp from 'fs/promises'
 
 describe('format', () => {
-  let nodes;
+  let nodes
   beforeAll((done) => {
     fsp.readFile(`${__dirname}/test.data.json`, 'utf8')
       .then((testData) => {
