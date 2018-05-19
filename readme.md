@@ -30,11 +30,13 @@ I want to be able to search for issues in a github repo and bring back all the i
 - caching
 
 ## Current work list
-- command line args for query
+- command line args for query COMPLETED
 - use as a module in another program
-- recursively get all the open issues
-- filter on search term
+- recursively get all the open issues COMPLETED
+- filter on search term COMPLETED
 - search closed issues too
+- take url rather than owner and name
+- add days old / age to table o/p
 
 
 ## References

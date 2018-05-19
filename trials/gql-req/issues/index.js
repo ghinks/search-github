@@ -18,6 +18,7 @@ const query = `{
         }
         publishedAt,
         id,
+        title,
         body
       }
     }

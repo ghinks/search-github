@@ -9,4 +9,4 @@ if (argv._.length < 3) {
   process.exit()
 }
 
-search(argv._[0], argv._[1], argv._.slice[2])
+search(argv._[0], argv._[1], argv._.slice(2) || argv._[2])
