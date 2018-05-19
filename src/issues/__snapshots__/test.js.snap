@@ -511,6 +511,7 @@ exports[`issue queries query creation should return a subsequent query 1`] = `
   query {
     repository(owner: \\"expressjs\\", name: \\"express\\") {
       id,
+      url,
       issues(first: 10, states: [OPEN] , orderBy: { field: CREATED_AT, direction: DESC } , after: \\"Y3Vyc29yOnYyOpHOAkR9fQ==\\") {
         totalCount,
         nodes {
@@ -519,6 +520,7 @@ exports[`issue queries query creation should return a subsequent query 1`] = `
           }
           publishedAt,
           id,
+          title,
           body,
           number,
         }
@@ -536,6 +538,7 @@ exports[`issue queries query creation should return an initial query 1`] = `
   query {
     repository(owner: \\"expressjs\\", name: \\"express\\") {
       id,
+      url,
       issues(first: 10, states: [OPEN] , orderBy: { field: CREATED_AT, direction: DESC } ) {
         totalCount,
         nodes {
@@ -544,6 +547,7 @@ exports[`issue queries query creation should return an initial query 1`] = `
           }
           publishedAt,
           id,
+          title,
           body,
           number,
         }
