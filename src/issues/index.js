@@ -16,6 +16,7 @@ const createQuery = (owner, name, cursor) => {
           }
           publishedAt,
           id,
+          title,
           body,
           number,
         }

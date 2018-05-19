@@ -1,6 +1,7 @@
 import { getIssues } from './issues'
 import filter from './search'
 import ora from 'ora'
+import { table } from 'table'
 
 const search = (owner, name, searchTerms) => {
   const spinner = ora('Scanning repo').start()
@@ -11,7 +12,10 @@ const search = (owner, name, searchTerms) => {
     })
     .then((matches) => {
       console.log(`num matches = ${matches.length}`)
-      matches.forEach(m => console.log(m.body))
+      let data = matches.map(match => [match.number, match.title])
+      data = [['Number', 'Title'], ...data]
+      const output = table(data)
+      console.log(output)
       spinner.stop()
     })
     .catch(err => console.log(err.message))
