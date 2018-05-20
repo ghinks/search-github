@@ -1,9 +1,9 @@
 import filter, { makeArray } from './index'
 
 describe('Search', () => {
-  const node1 = { body: '... abc body1 ... xyz' }
-  const node2 = { body: '... abc body2 ... xyz' }
-  const node3 = { body: '... abc body3 ... xyz' }
+  const node1 = { title: '... abc title1 ... xyz' }
+  const node2 = { title: '... abc title2 ... xyz' }
+  const node3 = { title: '... abc title3 ... xyz' }
   const nodes = [node1, node2, node3]
 
   describe('make array', () => {
@@ -43,13 +43,13 @@ describe('Search', () => {
       expect(filter(nodes, searchTerm)).toEqual(expect.arrayContaining(nodes))
     })
     test('expect to find only one match', () => {
-      const searchTerm = '.*body1.*'
+      const searchTerm = '.*title1.*'
       const value = filter(nodes, searchTerm)
       expect(value).toEqual(expect.arrayContaining([node1]))
       expect(value.length).toBe(1)
     })
     test('expect to find two matches', () => {
-      const searchTerm = '.*body[12].*'
+      const searchTerm = '.*title[12].*'
       const value = filter(nodes, searchTerm)
       expect(value).toEqual(expect.arrayContaining([node1, node2]))
       expect(value.length).toBe(2)
@@ -58,8 +58,8 @@ describe('Search', () => {
 
   describe('multiple search terms', () => {
     const searchTerm1 = '.*'
-    const searchTerm2 = '.*body2.*'
-    const searchTerm3 = '.*body3.*'
+    const searchTerm2 = '.*title2.*'
+    const searchTerm3 = '.*title3.*'
     test('given a wild card expect all nodes to match', () => {
       expect(filter(nodes, [searchTerm1])).toEqual(expect.arrayContaining(nodes))
     })
