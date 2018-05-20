@@ -33,10 +33,10 @@ I want to be able to search for issues in a github repo and bring back all the i
 - command line args for query COMPLETED
 - recursively get all the open issues COMPLETED
 - filter on search term COMPLETED
-- use as a module in another program
+- add days old / age to table o/p COMPLETED
+- use as a module in another program COMPLETED
 - search closed issues too
 - take url rather than owner and name
-- add days old / age to table o/p
 
 
 ## References
