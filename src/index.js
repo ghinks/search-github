@@ -2,6 +2,7 @@ import { getIssues } from './issues'
 import filter from './search'
 import ora from 'ora'
 import format from './format'
+import githubUrl from './githubUrl'
 
 const search = (owner, name, searchTerms) => {
   const spinner = ora('Scanning repo').start()
@@ -18,4 +19,4 @@ const search = (owner, name, searchTerms) => {
     .catch(err => console.log(err.message))
 }
 
-export { search as default, getIssues, filter }
+export { search as default, getIssues, filter, githubUrl }

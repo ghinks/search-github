@@ -54,7 +54,6 @@ const getIssues = async (owner, name, searchTerms) => {
   const token = getToken()
   const query = createQuery(owner, name)
   let result = await request(token, query)
-  console.log(result.repository.url)
   let results = result.repository.issues.nodes
   if (result.repository.issues.pageInfo.hasNextPage) {
     return pagedRequest(results, token, owner, name, searchTerms, result.repository.issues.pageInfo.endCursor)

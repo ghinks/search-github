@@ -4,7 +4,7 @@ exports[`format expect formated output 1`] = `
 "╔═════════╤═════════╤═════════════════════════════════════════╗
 ║ Issue # │ when    │ Title                                   ║
 ╟─────────┼─────────┼─────────────────────────────────────────╢
-║ 1234    │ 12 days │ Can't throw error in router middleware  ║
+║ 1234    │ 13 days │ Can't throw error in router middleware  ║
 ╚═════════╧═════════╧═════════════════════════════════════════╝
 "
 `;
