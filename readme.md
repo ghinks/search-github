@@ -35,8 +35,8 @@ I want to be able to search for issues in a github repo and bring back all the i
 - filter on search term COMPLETED
 - add days old / age to table o/p COMPLETED
 - use as a module in another program COMPLETED
+- take url rather than owner and name COMPLETED
 - search closed issues too
-- take url rather than owner and name
 
 
 ## References
