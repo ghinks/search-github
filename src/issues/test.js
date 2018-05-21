@@ -66,6 +66,11 @@ describe('issue queries', () => {
         const result = await getIssues('expressjs', 'express', 'undefined')
         expect(result).toMatchSnapshot()
       })
+      test('Expect a list of issues for closed and open', async () => {
+        expect.assertions(1)
+        const result = await getIssues('expressjs', 'express', 'undefined', 'OPEN, CLOSED')
+        expect(result).toMatchSnapshot()
+      })
     })
     describe('single page', () => {
       beforeEach((done) => {

@@ -12,7 +12,6 @@ const search = (owner, name, searchTerms) => {
       return filter(openNodes, searchTerms)
     })
     .then((matchingNodes) => {
-      console.log(`num matches = ${matchingNodes.length}`)
       console.log(`${format(matchingNodes)}`)
       spinner.stop()
     })

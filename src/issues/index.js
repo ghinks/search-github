@@ -2,14 +2,14 @@ import constants from '../constants'
 import { GraphQLClient } from 'graphql-request'
 import getToken from '../authentication'
 
-const createQuery = (owner, name, cursor) => {
+const createQuery = (owner, name, cursor, states = 'OPEN') => {
   const after = cursor ? `, after: "${cursor}"` : ''
   const issueQuery = `
   query {
     repository(owner: "${owner}", name: "${name}") {
       id,
       url,
-      issues(first: ${constants.pageSz}, states: [OPEN] , orderBy: { field: CREATED_AT, direction: DESC } ${after}) {
+      issues(first: ${constants.pageSz}, states: [${states}] , orderBy: { field: CREATED_AT, direction: DESC } ${after}) {
         totalCount,
         nodes {
           author {
@@ -50,9 +50,9 @@ const pagedRequest = async (results, token, owner, name, searchTerms, cursor) =>
   return results
 }
 
-const getIssues = async (owner, name, searchTerms) => {
+const getIssues = async (owner, name, searchTerms, states) => {
   const token = getToken()
-  const query = createQuery(owner, name)
+  const query = createQuery(owner, name, states)
   let result = await request(token, query)
   let results = result.repository.issues.nodes
   if (result.repository.issues.pageInfo.hasNextPage) {
