@@ -1,6 +1,6 @@
 {
   "name": "search-github",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "description": "",
   "bin": "bin/index.js",
   "main": "lib/index.js",

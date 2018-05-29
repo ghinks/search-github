@@ -128,6 +128,7 @@ screenshot goes here
 - readme update
 - no token found open page to get token or print out help, even self created page with the
 instructions ?
+- small png to show use
 
 
 ## References
