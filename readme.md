@@ -76,12 +76,12 @@ num matches = 35
 
 for cli use
 ```
-npm i -g search-github
+npm i -g @gvhinks/search-github
 ```
 
 for use as a module
 ```
-npm i -S search-github
+npm i -S @gvhinks/search-github
 ```
 
 ## Authentication
