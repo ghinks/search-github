@@ -117,20 +117,6 @@ I want to be able to search for issues in a github repo and bring back all the i
 screenshot goes here
 ```
 
-## Current work list
-- command line args for query COMPLETED
-- recursively get all the open issues COMPLETED
-- filter on search term COMPLETED
-- add days old / age to table o/p COMPLETED
-- use as a module in another program COMPLETED
-- take url rather than owner and name COMPLETED
-- search closed issues too COMPLETED
-- readme update
-- no token found open page to get token or print out help, even self created page with the
-instructions ?
-- small png to show use
-
-
 ## References
 
 - [github developer v4](https://developer.github.com/v4/)
